@@ -1,6 +1,6 @@
 local opt = vim.opt
 
---appearance 
+--appearance
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.background = "dark"
@@ -19,17 +19,17 @@ opt.autoindent = true
 opt.wrap = false
 
 --search settings
-opt.ignorecase = true--ignore case by default
-opt.smartcase = true--but be case sensitive if I search using a capital
+opt.ignorecase = true --ignore case by default
+opt.smartcase = true --but be case sensitive if I search using a capital
 
 --cursor
 opt.cursorline = true
 
---backspace 
+--backspace
 opt.backspace = "indent,eol,start"
 
 --clipboard
-opt.clipboard:append("unnamedplus")--use system keyboard when yank/copy
+opt.clipboard:append("unnamedplus") --use system keyboard when yank/copy
 
 --split windows
 opt.splitright = true

@@ -33,7 +33,12 @@ return packer.startup(function(use)
 
 	use("bluz71/vim-nightfly-guicolors") --colorscheme
 
-	use("nvim-tree/nvim-tree.lua") --file explorer
+	use({ --file explorer
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"b0o/nvim-tree-preview.lua",
+		},
+	})
 
 	use("kyazdani42/nvim-web-devicons")
 
