@@ -51,5 +51,13 @@ nvimtree.setup({
 			},
 		},
 	},
+	git = {
+		enable = true,
+		ignore = false,
+		timeout = 500,
+	},
+	filters = {
+		dotfiles = false,
+	},
 	on_attach = my_on_attach,
 })
