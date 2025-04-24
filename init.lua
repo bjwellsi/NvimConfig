@@ -14,6 +14,9 @@ require("braiden.plugins.lsp.null-ls")
 require("braiden.plugins.autopairs")
 require("braiden.plugins.gitsigns")
 require("braiden.plugins.nvim-tree-preview")
+require("braiden.plugins.dadbod")
+--custom sql tooling
+require("braiden.sql")
 
 vim.cmd("cnoreabbrev Wa wa")
 vim.cmd("cnoreabbrev WA wa")

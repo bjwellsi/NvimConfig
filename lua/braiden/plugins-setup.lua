@@ -70,7 +70,6 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	}) -- enhanced lsp uis
-	use("jose-elias-alvarez/typescript.nvim") --add more functionality to ts server
 	use("onsails/lspkind.nvim") --add vscode like icons to autocompletetion window
 
 	-- treesitter configuration
@@ -92,6 +91,14 @@ return packer.startup(function(use)
 
 	--git signs
 	use("lewis6991/gitsigns.nvim")
+
+	use({
+		"tpope/vim-dadbod",
+		requires = {
+			use("kristijanhusak/vim-dadbod-ui"),
+			use("kristijanhusak/vim-dadbod-completion"),
+		},
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
