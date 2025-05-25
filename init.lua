@@ -1,13 +1,3 @@
 require("configs.options")
 require("configs.keymaps")
-require("configs.colorscheme")
 require("configs.lazy")
-
-vim.cmd("cnoreabbrev Wa wa")
-vim.cmd("cnoreabbrev WA wa")
-vim.cmd("cnoreabbrev W w")
-vim.cmd("cnoreabbrev Q q")
-vim.cmd("cnoreabbrev Wq wq")
-vim.cmd("cnoreabbrev WQ wq")
-vim.cmd("cnoreabbrev Qa qa")
-vim.cmd("cnoreabbrev QA qa")

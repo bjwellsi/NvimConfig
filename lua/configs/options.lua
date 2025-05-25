@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.log.levels.DEFAULT = vim.log.levels.WARN
+
 --appearance
 opt.termguicolors = true
 opt.signcolumn = "yes"
