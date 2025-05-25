@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = { "ellisonleao/dotenv.nvim" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		--capabilities from nvim-cmp
@@ -8,6 +9,10 @@ return {
 		if ok then
 			capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 		end
+
+		--load .envs
+		--load sql connection strings
+		vim.cmd.Dotenv(vim.loop.os_homedir() .. "/.config/sql/connections/stellify.env")
 
 		--common on_attach logic
 		local on_attach = function(_, bufnr)
@@ -66,9 +71,19 @@ return {
 			on_attach = on_attach,
 		})
 
-		vim.lsp.config("sqlls", {
+		vim.lsp.config("sqls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				sqls = {
+					connections = {
+						{
+							driver = "mssql",
+							dataSourceName = vim.env.MSQL_DSN,
+						},
+					},
+				},
+			},
 		})
 
 		vim.lsp.config("dockerls", {
@@ -87,7 +102,7 @@ return {
 		vim.lsp.enable("csharp_ls")
 		vim.lsp.enable("bashls")
 		vim.lsp.enable("lua_ls")
-		vim.lsp.enable("sqlls")
+		vim.lsp.enable("sqls")
 		vim.lsp.enable("jsonls")
 		vim.lsp.enable("dockerls")
 		vim.lsp.enable("cssls")
