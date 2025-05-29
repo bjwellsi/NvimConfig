@@ -43,23 +43,6 @@ vim.api.nvim_create_user_command("RunSQLToCSV", function()
 
 		os.execute(cmd)
 	end
-
-	--[[
-	local cmd = string.format(
-		--"tmux split-window -v 'sqlcmd -S %s -d %s -U %s -P %s -i %s -s \",\" -W -h 1 -u > %s && nvim %s; rm %s'",
-		"tmux split-window -v 'usql \"sqlserver://%s:%s@%s/%s\" -f %s --csv > %s 2>&1; nvim %s; rm %s'",
-		user,
-		password,
-		server_full,
-		db,
-		sqlfile,
-		tmp,
-		tmp,
-		tmp
-	)
-
-	os.execute(cmd)
-  -]]
 end, {})
 
 -- Only add autocmd if CsvView is available
@@ -68,7 +51,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	callback = function()
 		local ok, _ = pcall(require, "csvview")
 		if ok then
-			vim.cmd("silent! CsvViewEnable")
+			vim.cmd("silent! CsvViewEnable display_mode=border header_lnum=1")
 		end
 	end,
 })
