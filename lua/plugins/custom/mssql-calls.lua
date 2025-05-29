@@ -39,6 +39,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "sql",
 	callback = function()
-		vim.keymap.set("n", "<leader>ss", ":RunSQLToCSV<CR>", { buffer = true, desc = "Run SQL and view as CSV" })
+		vim.keymap.set("n", "<leader>ss", function()
+			vim.cmd("write")
+			vim.cmd("RunSQLToCSV")
+		end, { buffer = true, desc = "Save and run sql" })
 	end,
 })
