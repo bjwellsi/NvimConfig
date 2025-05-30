@@ -11,7 +11,7 @@ vim.cmd("cnoreabbrev QA qa")
 
 local keymap = vim.keymap --for conciseness
 
---general keymaps
+keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 
 keymap.set("n", "<leader>q", ":NvimTreeClose<CR>:q<CR>") -- close tree, then quit
 
@@ -20,12 +20,9 @@ keymap.set("n", "<leader>nh", ":nohl<CR>") --clear search highlighting
 keymap.set("n", "x", '"_x') --don't copy x into register
 
 keymap.set("n", "<leader>sv", "<C-w>v") --split window vertically
---keymap.set("n", "<leader>sh", "<C-w>s")--split window horizontally
---keymap.set("n", "<leader>se", "<C-w>=")--make split windows equal width
+keymap.set("n", "<leader>sh", "<C-w>s") --split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=") --make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") --close current split window
 
---plugin keymaps
-
---nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") --change the toggle command
-keymap.set("n", "<leader>w", ":NvimTreeFocus<CR>") --change the toggle command
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") --close tree
+keymap.set("n", "<leader>w", ":NvimTreeFocus<CR>") --switch to tree

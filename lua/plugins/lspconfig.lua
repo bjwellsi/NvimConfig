@@ -71,6 +71,7 @@ return {
 			on_attach = on_attach,
 		})
 
+		--[[
 		vim.lsp.config("sqls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -85,6 +86,7 @@ return {
 				},
 			},
 		})
+    ]]
 
 		vim.lsp.config("dockerls", {
 			capabilities = capabilities,
@@ -102,7 +104,7 @@ return {
 		vim.lsp.enable("csharp_ls")
 		vim.lsp.enable("bashls")
 		vim.lsp.enable("lua_ls")
-		vim.lsp.enable("sqls")
+		--vim.lsp.enable("sqls")
 		vim.lsp.enable("jsonls")
 		vim.lsp.enable("dockerls")
 		vim.lsp.enable("cssls")

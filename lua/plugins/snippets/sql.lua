@@ -6,9 +6,9 @@ local i = ls.insert_node
 ls.add_snippets("sql", {
 	s("ssf", {
 		t("SELECT "),
-		i(1, "*"),
+		i(2, "*"),
 		t(" FROM "),
-		i(2, "table"),
+		i(1, "table"),
 		t(";"),
 	}),
 	s("sc", {

@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons", "Kurren123/mssql.nvim" },
 	config = function()
 		local lualine_nightfly = require("lualine.themes.nightfly")
 
@@ -26,6 +26,11 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = lualine_nightfly,
+			},
+			sections = {
+				lualine_c = {
+					require("mssql").lualine_component,
+				},
 			},
 		})
 	end,
