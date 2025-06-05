@@ -14,6 +14,7 @@ local keymap = vim.keymap --for conciseness
 keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 
 keymap.set("n", "<leader>q", ":NvimTreeClose<CR>:q<CR>") -- close tree, then quit
+keymap.set("n", "<leader>qw", ":NvimTreeClose<CR>:wq<CR>") -- close tree, then quit
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") --clear search highlighting
 
@@ -26,3 +27,8 @@ keymap.set("n", "<leader>sx", ":close<CR>") --close current split window
 
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") --close tree
 keymap.set("n", "<leader>w", ":NvimTreeFocus<CR>") --switch to tree
+
+keymap.set("n", "<leader>ff", ":Telescope find_files<CR>") --find files
+keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>") --grep files
+keymap.set("n", "<leader>fb", ":Telescope buffers<CR>") --buffers files
+keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>") --help files
