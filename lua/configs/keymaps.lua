@@ -13,7 +13,7 @@ local keymap = vim.keymap --for conciseness
 
 keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 
-keymap.set("n", "<leader>q", ":NvimTreeClose<CR>:q<CR>") -- close tree, then quit
+keymap.set("n", "<leader>qa", ":NvimTreeClose<CR>:qa<CR>") -- close tree, then quit
 keymap.set("n", "<leader>qw", ":NvimTreeClose<CR>:wq<CR>") -- close tree, then quit
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") --clear search highlighting
