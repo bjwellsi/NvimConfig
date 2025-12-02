@@ -6,6 +6,10 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
+		filters = {
+			dotfiles = false,
+			git_ignored = false,
+		},
 		renderer = {
 			icons = {
 				glyphs = {
