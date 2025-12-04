@@ -8,6 +8,11 @@ vim.cmd("cnoreabbrev Wq wq")
 vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Qa qa")
 vim.cmd("cnoreabbrev QA qa")
+vim.cmd("cnoreabbrev L Lazy")
+vim.cmd("cnoreabbrev l Lazy")
+vim.cmd("cnoreabbrev LAzy Lazy")
+vim.cmd("cnoreabbrev LAZy Lazy")
+vim.cmd("cnoreabbrev LAZY Lazy")
 
 local keymap = vim.keymap --for conciseness
 
